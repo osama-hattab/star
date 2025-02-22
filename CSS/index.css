@@ -39,13 +39,15 @@ h1,h2,h3,h4,h5,h6{
 }
 [dir="rtl"] .aa p,h2{
     text-align: right;
+}
+[dir="ltr"] .aa p,h2{
+    text-align: left;
     
 }
 [dir="rtl"] .list-inline-item {
     margin-left: 1rem !important;
     margin-right: 0 !important;
 }
-/* Custom Colors */
 .bg-gold { background-color: var(--gold); }
 .text-gold { color: var(--gold); }
 .btn-gold {
