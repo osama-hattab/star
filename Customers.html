@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Company - Customers</title>
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+     <!-- Font Awesome -->
+     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!--Animate Css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+     <!-- Custom CSS -->
+     <link rel="stylesheet" href="CSS/index.css">
+     <link rel="icon" href="img/StartLogo.webp" type="image/png">
+ 
+     <meta name="description" content="Star Company offers high-quality valet and parking services, ensuring security, comfort, and full insurance coverage.">
+     <meta name="keywords" content="Star Company, valet services, parking services, security, insurance, luxury parking, customer satisfaction">
+     <meta name="author" content="Star Company">
+     <!-- Open Graph -->
+     <meta property="og:title" content="Star Company | Valet Parking Services in Amman, Jordan" />
+     <meta property="og:description" content="Providing high-quality valet and parking solutions for restaurants, hotels, and commercial places in Amman." />
+     <meta property="og:image" content="https://osama-hattab.github.io/star/img/StartLogo.png" />
+     <meta property="og:url" content="https://osama-hattab.github.io/star" />
+     <meta property="og:type" content="website" />
+ 
+     <meta property="og:site_name" content="Star Company" />
+     <meta property="og:locale" content="en_US" />
+     <meta property="og:locale:alternate" content="ar_JO" />
+     <meta property="og:locale:alternate" content="en_JO" />
+     
+         <script type="application/ld+json">
+             {
+               "@context": "https://schema.org",
+               "@type": "LocalBusiness",
+               "name": "شركة Star",
+               "description": "خدمات فاليه ومواقف سيارات في عمّان للمطاعم والفنادق والأعمال التجارية. ,Valet and parking services in Amman for restaurants, hotels, and commercial businesses.",
+               "image": "https://osama-hattab.github.io/star/img/StartLogo.png",
+               "telephone": "+962770630631",
+               "address": {
+                 "@type": "PostalAddress",
+                 "addressLocality": "Amman",
+                 "addressCountry": "JO"
+               },
+               "url": "https://osama-hattab.github.io/star"
+             }
+             </script>
+           
+<style>
+     #customers .card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #customers .card-img-container {
+            position: relative;
+            width: 100%;
+            padding-top: 100%; /* مربع متساوي الأضلاع */
+            overflow: hidden;
+        }
+
+        #customers .card-img-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        #customers .card:hover .card-img-top {
+            transform: scale(1.1);
+        }
+
+        #customers .card-body {
+            padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #customers .card-title {
+            font-size: 1rem;
+            margin-bottom: 0;
+            color: #333;
+            font-weight: 600;
+        }
+
+        /* تحسينات للهواتف */
+        @media (max-width: 767.98px) {
+            #customers .col-md-3 {
+                flex: 0 0 50%;
+                max-width: 50%;
+                padding: 0 8px 16px;
+            }
+            
+            #customers .card-img-container {
+                padding-top: 100%; /* مربع على الهاتف */
+            }
+            
+            #customers .card-title {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            #customers .col-md-3 {
+                flex: 0 0 100%;
+                max-width: 100%;
+                padding: 0 0 16px;
+            }
+            
+            #customers .card-img-container {
+                padding-top: 75%; 
+            }
+        }
+</style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="fixed-top shadow-sm" style="background-color: black;">
+        <nav class="navbar navbar-expand-lg navbar-dark container">
+            <div class="logo-container">
+                <a class="navbar-brand fs-3 fw-bold text-gold" href="#">
+                    <img src="img/StartLogo.webp" alt="Star Company Logo – Valet & Parking Services in Jordan" class="logo-img me-3 ">
+                    <span style="position: relative;top: 8px;">STAR COMPANY</span></a>
+            </div>
+    
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link m-1" href="index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                    <li class="nav-item"><a class="nav-link m-1 active" href="Customers.html" data-en="Our customers" data-ar="عملائنا">Our customers</a></li>
+                    <li class="nav-item"><a class="nav-link m-1" href="contactUs.html" data-en="Contact us" data-ar="اتصل بنا">Contact us</a></li>
+                    <li class="nav-item">
+                        <button class="btn btn-outline-gold mx-2 m-1" id="langSwitcher" style="margin: auto 10px auto 10px;" data-en="AR" data-ar="EN">AR</button>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tel:0770630631"><button class="btn btn-gold m-1" data-en="call us now" data-ar="اتصل بنا الآن">call us now</button></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <br><br><br><br>
+    <!-- Customers Section -->
+    <section id="customers" class="py-5 text-center">
+        <div class="container mb-3">
+            <h2 class="text-center mb-5 text-goold h1" data-en="Our Customers" data-ar="عملائنا">Our Customers</h2>
+            <div class="row g-4">
+                <div class="col-md-3 col-6 px-2 mb-4">
+                    <a href="https://maps.app.goo.gl/Re8mS32hkVqkHkZJ7" target="_blank" class="text-decoration-none">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-img-container">
+                                <img src="img/Sofia Turkish restaurant.webp" 
+                                     class="card-img-top" 
+                                     alt="Sofia Turkish Restaurant Interior"
+                                     loading="lazy">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Sofia Turkish restaurant</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+               
+                <!-- Customer 2 -->
+                 
+                <div class="col-md-3 col-6 px-2 mb-4">
+                    <a href="https://maps.app.goo.gl/EXzjAnS3H4PfMaTj9" target="_blank" class="text-decoration-none">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-img-container">
+                                <img src="img/Forca International Cuisine.webp" 
+                                     class="card-img-top" 
+                                     alt="Forca International Cuisine"
+                                     loading="lazy">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Forca International Cuisine</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                              <!-- Customer 3 -->
+                              <div class="col-md-3 col-6 px-2 mb-4">
+                                <a href="https://maps.app.goo.gl/ZVWetmtABGwgSois5" target="_blank" class="text-decoration-none">
+                                    <div class="card shadow-sm h-100">
+                                        <div class="card-img-container">
+                                            <img src="img/OmarSaloon.webp" 
+                                                 class="card-img-top" 
+                                                 alt="Omar Saloon Interior"
+                                                 loading="lazy">
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">Omar Saloon</h5>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <!-- Customer 4 -->
+                            <div class="col-md-3 col-6 px-2 mb-4">
+                                <a href="https://maps.app.goo.gl/a9iuuamJs3YNauiG9" target="_blank" class="text-decoration-none">
+                                    <div class="card shadow-sm h-100">
+                                        <div class="card-img-container">
+                                            <img src="img/Olga nail studio.webp" 
+                                                 class="card-img-top" 
+                                                 alt="Olga Nail Studio Interior"
+                                                 loading="lazy">
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">Olga nail studio</h5>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <!-- Customer 5 -->
+                            <div class="col-md-3 col-6 px-2 mb-4">
+                                <a href="https://maps.app.goo.gl/ZYci3SkesKFDCFye7" target="_blank" class="text-decoration-none">
+                                    <div class="card shadow-sm h-100">
+                                        <div class="card-img-container">
+                                            <img src="img/Golden Apple Dental Clinic.webp" 
+                                                 class="card-img-top" 
+                                                 alt="Golden Apple Dental Clinic Interior"
+                                                 loading="lazy">
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">Golden Apple Dental Clinic</h5>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <!-- Customer 6 -->
+                            <div class="col-md-3 col-6 px-2 mb-4">
+                                <a href="https://maps.app.goo.gl/Z26YGsGFuU2S4JqB8" target="_blank" class="text-decoration-none">
+                                    <div class="card shadow-sm h-100">
+                                        <div class="card-img-container">
+                                            <img src="img/Mr Black barbershop.webp" 
+                                                 class="card-img-top" 
+                                                 alt="Mr Black Barbershop Interior"
+                                                 loading="lazy">
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">Mr Black barbershop</h5>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <!-- Customer 7 -->
+                            <div class="col-md-3 col-6 px-2 mb-4">
+                                <a href="https://maps.app.goo.gl/Na9sq4uExvJ9n3uR7" target="_blank" class="text-decoration-none">
+                                    <div class="card shadow-sm h-100">
+                                        <div class="card-img-container">
+                                            <img src="img/DEEP CAFE.webp" 
+                                                 class="card-img-top" 
+                                                 alt="DEEP CAFE Interior"
+                                                 loading="lazy">
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">DEEP CAFE</h5>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <!-- Customer 8 -->
+                            <div class="col-md-3 col-6 px-2 mb-4">
+                                <a href="https://maps.app.goo.gl/LxpGVJv63cqbCAQV6" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                                    <div class="card shadow-sm h-100">
+                                        <div class="card-img-container">
+                                            <img src="img/Hotel Philosophy.webp" 
+                                                 class="card-img-top" 
+                                                 alt="Hotel Philosophy Interior"
+                                                 loading="lazy">
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">Hotel Philosophy</h5>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <!-- Customer 9 -->
+                            <div class="col-md-3 col-6 px-2 mb-4">
+                                <a href="https://maps.app.goo.gl/9zWLFh2TJLYbDCaT9" target="_blank" class="text-decoration-none">
+                                    <div class="card shadow-sm h-100">
+                                        <div class="card-img-container">
+                                            <img src="img/MTN.webp" 
+                                                 class="card-img-top" 
+                                                 alt="مجمع تحسين ناخو التجاري"
+                                                 loading="lazy">
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">مجمع تحسين ناخو التجاري ام اذينة</h5>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <!-- Customer 10 -->
+                            <div class="col-md-3 col-6 px-2 mb-4">
+                                <a href="https://maps.app.goo.gl/BxCx94KxARZqpt796" target="_blank" class="text-decoration-none">
+                                    <div class="card shadow-sm h-100">
+                                        <div class="card-img-container">
+                                            <img src="img/Nuwara Khanum.webp" 
+                                                 class="card-img-top" 
+                                                 alt="Nuwara Khanum Restaurant"
+                                                 loading="lazy">
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">Nuwara Khanum _ نوارة خآنم</h5>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <!-- Customer 11 -->
+                            <div class="col-md-3 col-6 px-2 mb-4">
+                                <a href="https://maps.app.goo.gl/i1Znr4GeuMt97XrW9" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                                    <div class="card shadow-sm h-100">
+                                        <div class="card-img-container">
+                                            <img src="img/um klele.webp" 
+                                                 class="card-img-top" 
+                                                 alt="المطعم اللبناني ام خليل"
+                                                 loading="lazy">
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">المطعم اللبناني ام خليل عمّان</h5>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <!-- Customer 12 -->
+                            <div class="col-md-3 col-6 px-2 mb-4">
+                                <a href="https://maps.app.goo.gl/KxoXpqTVwfEmH19x9" target="_blank" class="text-decoration-none">
+                                    <div class="card shadow-sm h-100">
+                                        <div class="card-img-container">
+                                            <img src="img/nova beauty center.webp" 
+                                                 class="card-img-top" 
+                                                 alt="Nova Beauty Center Interior"
+                                                 loading="lazy">
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">nova beauty center</h5>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <!-- Customer 13 -->
+                            <div class="col-md-3 col-6 px-2 mb-4">
+                                <a href="https://maps.app.goo.gl/2qhwbHb9qp6KevAU6" target="_blank" class="text-decoration-none">
+                                    <div class="card shadow-sm h-100">
+                                        <div class="card-img-container">
+                                            <img src="img/LB lounge.webp" 
+                                                 class="card-img-top" 
+                                                 alt="LB Lounge Interior"
+                                                 loading="lazy">
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">LB lounge</h5>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <!-- Customer 14 -->
+                            <div class="col-md-3 col-6 px-2 mb-4">
+                                <a href="https://maps.app.goo.gl/8r3HQYNJmktqWwRh6" target="_blank" class="text-decoration-none">
+                                    <div class="card shadow-sm h-100">
+                                        <div class="card-img-container">
+                                            <img src="img/speakeasy 1920.webp" 
+                                                 class="card-img-top" 
+                                                 alt="Speakeasy 1920 Bar"
+                                                 loading="lazy">
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">speakeasy 1920</h5>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <!-- Customer 15 -->
+                            <div class="col-md-3 col-6 px-2 mb-4">
+                                <a href="https://maps.app.goo.gl/yDV6ozDT9zMQFTZi9" target="_blank" class="text-decoration-none">
+                                    <div class="card shadow-sm h-100">
+                                        <div class="card-img-container">
+                                            <img src="img/Restaurant Nagham.webp" 
+                                                 class="card-img-top" 
+                                                 alt="Restaurant Nagham Interior"
+                                                 loading="lazy">
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">لقمة ونغمة Restaurant Nagham</h5>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <!-- Customer 16 -->
+                            <div class="col-md-3 col-6 px-2 mb-4">
+                                <a href="https://maps.app.goo.gl/mNYuoaPjFo76gJFGA" target="_blank" class="text-decoration-none">
+                                    <div class="card shadow-sm h-100">
+                                        <div class="card-img-container">
+                                            <img src="img/Inas Restaurant & Cafe.webp" 
+                                                 class="card-img-top" 
+                                                 alt="Inas Restaurant & Cafe"
+                                                 loading="lazy">
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">Inas Restaurant & Cafe - مطعم وقهوة إناس</h5>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <!-- Customer 17 -->
+                            <div class="col-md-3 col-6 px-2 mb-4">
+                                <a href="https://maps.app.goo.gl/vSWcYtCmsorBygrZ8" target="_blank" class="text-decoration-none">
+                                    <div class="card shadow-sm h-100">
+                                        <div class="card-img-container">
+                                            <img src="img/Shai Wna3na3.webp" 
+                                                 class="card-img-top" 
+                                                 alt="Shai Wna3na3 Cafe"
+                                                 loading="lazy">
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">Shai Wna3na3 شاي و نعنع</h5>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <!-- Customer 18 -->
+                            <div class="col-md-3 col-6 px-2 mb-4">
+                                <a href="https://maps.app.goo.gl/AjxVTaY4uuTiNyw47" target="_blank" class="text-decoration-none">
+                                    <div class="card shadow-sm h-100">
+                                        <div class="card-img-container">
+                                            <img src="img/Strand Hotel Jordan 1 & 2.webp" 
+                                                 class="card-img-top" 
+                                                 alt="Strand Hotel Jordan"
+                                                 loading="lazy">
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">Strand Hotel Jordan 1 & 2</h5>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <!-- Customer 19 -->
+                            <div class="col-md-3 col-6 px-2 mb-4">
+                                <a href="https://maps.app.goo.gl/TLgtfXL4TmoXwkPE9" target="_blank" class="text-decoration-none">
+                                    <div class="card shadow-sm h-100">
+                                        <div class="card-img-container">
+                                            <img src="img/The House Boutique Suites.webp" 
+                                                 class="card-img-top" 
+                                                 alt="The House Boutique Suites"
+                                                 loading="lazy">
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">The House Boutique Suites</h5>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <!-- Customer 20 -->
+                            <div class="col-md-3 col-6 px-2 mb-4">
+                                <a href="https://maps.app.goo.gl/E4ToS1pY6WepF3vd8" target="_blank" class="text-decoration-none">
+                                    <div class="card shadow-sm h-100">
+                                        <div class="card-img-container">
+                                            <img src="img/Hair Boutique.webp" 
+                                                 class="card-img-top" 
+                                                 alt="Hair Boutique Salon"
+                                                 loading="lazy">
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">Hair Boutique</h5>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <!-- Customer 21 -->
+                            <div class="col-md-3 col-6 px-2 mb-4">
+                                <a href="https://maps.app.goo.gl/WvMpPHgwDUKQn3237" target="_blank" class="text-decoration-none">
+                                    <div class="card shadow-sm h-100">
+                                        <div class="card-img-container">
+                                            <img src="img/AAA.webp" 
+                                                 class="card-img-top" 
+                                                 alt="غرفة صناعة عمان"
+                                                 loading="lazy">
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">غرفة صناعة عمّان</h5>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <!-- Customer 22 -->
+                            <div class="col-md-3 col-6 px-2 mb-4">
+                                <a href="https://maps.app.goo.gl/z4oxDrz2dYS1o3Jx5" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                                    <div class="card shadow-sm h-100">
+                                        <div class="card-img-container">
+                                            <img src="img/Dr Samkari Clinic.webp" 
+                                                 class="card-img-top" 
+                                                 alt="Dr Samkari Clinic"
+                                                 loading="lazy">
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">Dr Samkari Clinic</h5>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <!-- Customer 23 -->
+                            <div class="col-md-3 col-6 px-2 mb-4">
+                                <a href="https://maps.app.goo.gl/pCTJmaK6U23PVqv67" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                                    <div class="card shadow-sm h-100">
+                                        <div class="card-img-container">
+                                            <img src="img/The Compass Hotel.webp" 
+                                                 class="card-img-top" 
+                                                 alt="The Compass Hotel"
+                                                 loading="lazy">
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">The Compass Hotel</h5>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <!-- Customer 24 -->
+                            <div class="col-md-3 col-6 px-2 mb-4">
+                                <a href="https://maps.app.goo.gl/5urzRJfXYZDK2ZaT9" target="_blank" class="text-decoration-none">
+                                    <div class="card shadow-sm h-100">
+                                        <div class="card-img-container">
+                                            <img src="img/MAS.webp" 
+                                                 class="card-img-top" 
+                                                 alt="MAS Dental Care Clinic"
+                                                 loading="lazy">
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">MAS Dental Care</h5>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+    </section>
+
+        
+    <!-- Footer -->
+    <footer class="text-white py-4" style="background-color: black;">
+        <div class="container">
+            <div class="row">
+                <!-- Copyright Section -->
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <h6 class="mb-0" id="data" >&copy; 2025 Star Company. All rights reserved.</h6>
+                </div>
+    
+                <!-- Navigation Links -->
+                <div class="col-md-6 text-center text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="index.html" class="text-white text-decoration-none active">Home</a></li>
+                        <li class="list-inline-item"><a href="Customers.html" class="text-white text-decoration-none">Our Customers</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+                        <li class="list-inline-item"><a href="tel:0770630631" class="text-white text-decoration-none">Call Us Now</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/index.js" async></script>
+</body>
+</html>
